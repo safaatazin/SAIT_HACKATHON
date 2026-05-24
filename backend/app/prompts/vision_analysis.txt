@@ -1,0 +1,20 @@
+Analyze this room image. Detect whether any objects appear to have been placed, moved, removed, picked up, or stored. Return only JSON in this format:
+
+{
+  "events": [
+    {
+      "object_name": "string",
+      "action": "placed | moved | removed | picked_up | stored | unknown",
+      "location": "string",
+      "confidence": number,
+      "evidence": "short explanation"
+    }
+  ],
+  "scene_summary": "short description of what happened"
+}
+
+If nothing useful happened, return:
+{
+  "events": [],
+  "scene_summary": "No important object movement detected."
+}
